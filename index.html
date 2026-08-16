@@ -7,6 +7,7 @@
 <style>
 *{box-sizing:border-box}
 :root{
+  --fs:1;
   --bg:#0d0a12;
   --bg2:#14101c;
   --panel:#17101f;
@@ -63,19 +64,19 @@ header{
   border:1px solid var(--line);
   border-radius:8px;
 }
-.brand{font-size:14px; letter-spacing:4px; color:var(--dim); border-right:1px solid var(--line); padding-right:16px; line-height:1.6}
+.brand{font-size:calc(14px * var(--fs)); letter-spacing:4px; color:var(--dim); border-right:1px solid var(--line); padding-right:16px; line-height:1.6}
 .who{display:flex; flex-direction:column; gap:1px; min-width:160px}
-#titleName{font-size:19px; letter-spacing:2px}
-#titleAlias{font-size:12px; color:var(--gold); letter-spacing:2px}
-#cal{font-family:var(--num); font-size:12px; color:var(--dim); display:flex; gap:12px; align-items:center}
-#cal b{color:var(--ink); font-weight:normal; font-size:14px}
+#titleName{font-size:calc(19px * var(--fs)); letter-spacing:2px}
+#titleAlias{font-size:calc(12px * var(--fs)); color:var(--gold); letter-spacing:2px}
+#cal{font-family:var(--num); font-size:calc(12px * var(--fs)); color:var(--dim); display:flex; gap:12px; align-items:center}
+#cal b{color:var(--ink); font-weight:normal; font-size:calc(14px * var(--fs))}
 #seal{
   margin-left:auto;
   width:64px; height:64px;
   display:grid; place-items:center;
   border:2px solid var(--rouge);
   color:var(--rouge);
-  font-size:30px;
+  font-size:calc(30px * var(--fs));
   box-shadow:inset 0 0 0 3px var(--bg), inset 0 0 0 4px var(--rouge), 0 0 22px rgba(196,69,94,.25);
   background:linear-gradient(135deg, rgba(196,69,94,.10), rgba(196,69,94,.02));
   position:relative;
@@ -83,7 +84,7 @@ header{
 #seal::after{
   content:attr(data-stage);
   position:absolute; bottom:-16px; left:50%; transform:translateX(-50%);
-  font-size:10px; letter-spacing:2px; color:var(--rouge); white-space:nowrap;
+  font-size:calc(10px * var(--fs)); letter-spacing:2px; color:var(--rouge); white-space:nowrap;
 }
 #seal.flash{animation:sealFlash .9s ease}
 @keyframes sealFlash{
@@ -93,10 +94,10 @@ header{
 }
 .reset{
   background:none; border:1px solid var(--line); color:var(--faint);
-  padding:5px 12px; border-radius:4px; font-size:12px; letter-spacing:2px;
+  padding:5px 12px; border-radius:4px; font-size:calc(12px * var(--fs)); letter-spacing:2px;
 }
 .reset:hover{border-color:var(--rouge); color:var(--rouge)}
-.lore-btn{background:none; border:1px solid var(--line); color:var(--gold); padding:5px 12px; border-radius:4px; font-size:12px; letter-spacing:2px}
+.lore-btn{background:none; border:1px solid var(--line); color:var(--gold); padding:5px 12px; border-radius:4px; font-size:calc(12px * var(--fs)); letter-spacing:2px}
 .lore-btn:hover{border-color:var(--gold); color:var(--gold)}
 
 /* ---------- 主体 ---------- */
@@ -117,14 +118,14 @@ section{display:flex; flex-direction:column; overflow:hidden}
 
 .sec-title{
   display:flex; align-items:center; gap:8px;
-  font-size:13px; letter-spacing:4px; color:var(--dim);
+  font-size:calc(13px * var(--fs)); letter-spacing:4px; color:var(--dim);
   margin:0 0 9px;
 }
 .sec-title::before{content:""; width:4px; height:13px; background:linear-gradient(180deg, var(--rouge), var(--rouge2))}
 .sec{margin-bottom:16px}
 .stat-row{margin-bottom:9px}
-.stat-head{display:flex; justify-content:space-between; align-items:baseline; font-size:12px; margin-bottom:4px}
-.stat-head .v{font-family:var(--num); font-size:11px; color:var(--dim)}
+.stat-head{display:flex; justify-content:space-between; align-items:baseline; font-size:calc(12px * var(--fs)); margin-bottom:4px}
+.stat-head .v{font-family:var(--num); font-size:calc(11px * var(--fs)); color:var(--dim)}
 .meter{height:7px; background:#241c30; border:1px solid #2a2136; border-radius:4px; overflow:hidden}
 .meter i{display:block; height:100%; border-radius:4px; transition:width .45s ease}
 .m-cult{background:linear-gradient(90deg,#8a6b3a,var(--gold))}
@@ -134,19 +135,19 @@ section{display:flex; flex-direction:column; overflow:hidden}
 .m-mind{background:linear-gradient(90deg,#55627a,var(--moon))}
 .m-demon{background:linear-gradient(90deg,#5c1f2c,var(--rouge2))}
 .m-sis{background:linear-gradient(90deg,#4c3a55,#c88fa8)}
-.bottleneck{margin-top:5px; font-size:11px; color:var(--gold); letter-spacing:1px; animation:blink 1.6s ease-in-out infinite}
+.bottleneck{margin-top:5px; font-size:calc(11px * var(--fs)); color:var(--gold); letter-spacing:1px; animation:blink 1.6s ease-in-out infinite}
 @keyframes blink{0%,100%{opacity:1}50%{opacity:.45}}
-.resources{display:flex; flex-wrap:wrap; gap:7px; font-family:var(--num); font-size:11px}
+.resources{display:flex; flex-wrap:wrap; gap:7px; font-family:var(--num); font-size:calc(11px * var(--fs))}
 .chip{border:1px solid var(--line); background:#221a2b; border-radius:4px; padding:3px 8px; color:var(--dim)}
 .chip b{color:var(--ink); font-weight:normal}
 .ladder{list-style:none; margin:0; padding:0}
-.ladder li{position:relative; padding:4px 0 4px 25px; font-size:12px; color:var(--faint); letter-spacing:2px}
+.ladder li{position:relative; padding:4px 0 4px 25px; font-size:calc(12px * var(--fs)); color:var(--faint); letter-spacing:2px}
 .ladder li::before{content:""; position:absolute; left:6px; top:11px; width:8px; height:8px; border:1px solid var(--faint); transform:rotate(45deg)}
 .ladder li.cur{color:var(--gold)}
 .ladder li.cur::before{border-color:var(--rouge); background:var(--rouge)}
 .ladder li::after{content:""; position:absolute; left:10px; top:19px; bottom:-6px; width:1px; background:var(--line)}
 .ladder li:last-child::after{display:none}
-.buff-tag{display:inline-block; border:1px solid var(--gold); color:var(--gold); border-radius:3px; font-size:10px; padding:2px 6px; margin:0 5px 5px 0; letter-spacing:1px}
+.buff-tag{display:inline-block; border:1px solid var(--gold); color:var(--gold); border-radius:3px; font-size:calc(10px * var(--fs)); padding:2px 6px; margin:0 5px 5px 0; letter-spacing:1px}
 
 /* ---------- 人物栏 ---------- */
 #people .sec-title{margin-bottom:8px}
@@ -169,15 +170,15 @@ section{display:flex; flex-direction:column; overflow:hidden}
   display:grid; place-items:center;
   border:1px solid var(--rouge);
   color:var(--rouge);
-  font-size:15px;
+  font-size:calc(15px * var(--fs));
   border-radius:50%;
   background:rgba(196,69,94,.08);
 }
 .npc-info{flex:1; min-width:0}
-.npc-info b{display:block; font-size:13px; letter-spacing:1px; font-weight:normal}
-.npc-info i{display:block; font-style:normal; font-size:10px; color:var(--faint); letter-spacing:1px; margin:1px 0 4px; white-space:nowrap; overflow:hidden; text-overflow:ellipsis}
+.npc-info b{display:block; font-size:calc(13px * var(--fs)); letter-spacing:1px; font-weight:normal}
+.npc-info i{display:block; font-style:normal; font-size:calc(10px * var(--fs)); color:var(--faint); letter-spacing:1px; margin:1px 0 4px; white-space:nowrap; overflow:hidden; text-overflow:ellipsis}
 .npc-info .meter{height:5px}
-.npc-stage{font-size:10px; color:var(--dim); letter-spacing:1px; white-space:nowrap}
+.npc-stage{font-size:calc(10px * var(--fs)); color:var(--dim); letter-spacing:1px; white-space:nowrap}
 .npc-stage.hot{color:var(--peach)}
 .npc-stage.sec{color:var(--gold)}
 .npc-card.npc-common{
@@ -193,7 +194,7 @@ section{display:flex; flex-direction:column; overflow:hidden}
 
 /* ---------- 地图 ---------- */
 .region-label{
-  font-size:11px;
+  font-size:calc(11px * var(--fs));
   letter-spacing:3px;
   color:var(--gold);
   border-bottom:1px dashed var(--line);
@@ -213,12 +214,12 @@ section{display:flex; flex-direction:column; overflow:hidden}
   color:var(--ink);
   position:relative;
 }
-.loc-btn b{font-size:13px; font-weight:normal; letter-spacing:1px}
-.loc-btn i{display:block; font-style:normal; font-size:10px; color:var(--faint); letter-spacing:1px; margin-top:1px}
+.loc-btn b{font-size:calc(13px * var(--fs)); font-weight:normal; letter-spacing:1px}
+.loc-btn i{display:block; font-style:normal; font-size:calc(10px * var(--fs)); color:var(--faint); letter-spacing:1px; margin-top:1px}
 .loc-btn em{
   position:absolute; top:6px; right:8px;
   font-style:normal;
-  font-size:10px;
+  font-size:calc(10px * var(--fs));
   color:var(--rouge);
   border:1px solid var(--rouge);
   border-radius:3px;
@@ -234,7 +235,7 @@ section{display:flex; flex-direction:column; overflow:hidden}
   border-left:2px solid var(--rouge2);
   background:rgba(30,18,38,.5);
   padding:8px 10px;
-  font-size:12px;
+  font-size:calc(12px * var(--fs));
   line-height:1.9;
   color:var(--dim);
   letter-spacing:1px;
@@ -249,14 +250,14 @@ section{display:flex; flex-direction:column; overflow:hidden}
   border-bottom:1px solid var(--line);
   padding:8px 16px;
   background:rgba(20,13,27,.55);
-  font-size:13px;
+  font-size:calc(13px * var(--fs));
   display:flex; align-items:center; gap:14px;
   flex-wrap:wrap;
 }
-#charInfo .ci-name{font-size:16px; letter-spacing:2px; color:var(--peach)}
-#charInfo .ci-tag{font-size:11px; color:var(--dim); letter-spacing:1px}
-#charInfo .ci-fav{font-family:var(--num); font-size:12px; color:var(--gold)}
-#log{flex:1; overflow-y:auto; padding:14px 18px; line-height:1.95; font-size:14px}
+#charInfo .ci-name{font-size:calc(16px * var(--fs)); letter-spacing:2px; color:var(--peach)}
+#charInfo .ci-tag{font-size:calc(11px * var(--fs)); color:var(--dim); letter-spacing:1px}
+#charInfo .ci-fav{font-family:var(--num); font-size:calc(12px * var(--fs)); color:var(--gold)}
+#log{flex:1; overflow-y:auto; padding:14px 18px; line-height:1.95; font-size:calc(14px * var(--fs))}
 .log-line{margin:0 0 10px; animation:lineIn .35s ease}
 @keyframes lineIn{from{opacity:0; transform:translateY(4px)} to{opacity:1; transform:none}}
 .log-line.danger{color:#d98b8b}
@@ -271,7 +272,7 @@ section{display:flex; flex-direction:column; overflow:hidden}
   line-height:2;
 }
 .log-line.event{color:var(--gold); font-weight:bold; letter-spacing:2px}
-.log-line.seal{color:var(--rouge); font-weight:bold; letter-spacing:3px; font-size:15px; text-shadow:0 0 14px rgba(196,69,94,.55)}
+.log-line.seal{color:var(--rouge); font-weight:bold; letter-spacing:3px; font-size:calc(15px * var(--fs)); text-shadow:0 0 14px rgba(196,69,94,.55)}
 .log-line .hl{color:var(--gold)}
 #actions{
   border-top:1px solid var(--line);
@@ -287,7 +288,7 @@ section{display:flex; flex-direction:column; overflow:hidden}
   color:var(--ink);
   border-radius:5px;
   padding:8px;
-  font-size:13px;
+  font-size:calc(13px * var(--fs));
   letter-spacing:2px;
   transition:transform .12s ease, border-color .12s ease, box-shadow .12s ease;
 }
@@ -295,9 +296,9 @@ section{display:flex; flex-direction:column; overflow:hidden}
 #actions button:disabled{opacity:.4; cursor:not-allowed}
 #actions button.choice{border-color:var(--rouge); background:linear-gradient(180deg, #2a1521, #1d1119); color:#f0c4cd}
 #actions button.choice:hover:not(:disabled){border-color:#e07088; box-shadow:0 0 16px rgba(196,69,94,.35)}
-#actions button small{display:block; font-size:10px; letter-spacing:1px; color:var(--faint); margin-top:2px; font-family:var(--serif)}
+#actions button small{display:block; font-size:calc(10px * var(--fs)); letter-spacing:1px; color:var(--faint); margin-top:2px; font-family:var(--serif)}
 #actions button.zhuzhu{border-color:var(--gold); color:#f0e3c0}
-footer{text-align:center; color:var(--faint); font-size:11px; letter-spacing:1px; padding-bottom:1px}
+footer{text-align:center; color:var(--faint); font-size:calc(11px * var(--fs)); letter-spacing:1px; padding-bottom:1px}
 
 /* ---------- 遮罩 ---------- */
 .overlay{position:fixed; inset:0; z-index:50; background:rgba(10,6,14,.93); display:grid; place-items:center; overflow-y:auto; padding:24px}
@@ -312,30 +313,30 @@ footer{text-align:center; color:var(--faint); font-size:11px; letter-spacing:1px
   animation:cardIn .5s ease;
 }
 @keyframes cardIn{from{opacity:0; transform:translateY(10px)} to{opacity:1; transform:none}}
-.card h1{margin:0 0 6px; font-size:32px; letter-spacing:10px; font-weight:normal; color:var(--ink)}
-.card .sub{color:var(--faint); letter-spacing:4px; font-size:12px; margin:0 0 22px}
-.card h2{margin:0 0 12px; font-size:24px; letter-spacing:6px; color:var(--rouge); font-weight:normal}
+.card h1{margin:0 0 6px; font-size:calc(32px * var(--fs)); letter-spacing:10px; font-weight:normal; color:var(--ink)}
+.card .sub{color:var(--faint); letter-spacing:4px; font-size:calc(12px * var(--fs)); margin:0 0 22px}
+.card h2{margin:0 0 12px; font-size:calc(24px * var(--fs)); letter-spacing:6px; color:var(--rouge); font-weight:normal}
 .big-seal{
   width:88px; height:88px; margin:0 auto 20px;
   display:grid; place-items:center;
   border:3px solid var(--rouge);
   color:var(--rouge);
-  font-size:42px;
+  font-size:calc(42px * var(--fs));
   box-shadow:inset 0 0 0 4px var(--bg), inset 0 0 0 5px var(--rouge), 0 0 30px rgba(196,69,94,.35);
   background:linear-gradient(135deg, rgba(196,69,94,.14), rgba(196,69,94,.02));
 }
 .origin-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:10px; margin:14px 0 18px}
 .origin-card{
   background:#1b1324; border:1px solid var(--line); border-radius:6px;
-  padding:12px; color:var(--ink); text-align:left; font-size:12px; line-height:1.7;
+  padding:12px; color:var(--ink); text-align:left; font-size:calc(12px * var(--fs)); line-height:1.7;
 }
-.origin-card b{display:block; font-size:15px; letter-spacing:3px; margin-bottom:4px; color:var(--gold)}
+.origin-card b{display:block; font-size:calc(15px * var(--fs)); letter-spacing:3px; margin-bottom:4px; color:var(--gold)}
 .origin-card:hover{border-color:var(--gold)}
 .origin-card.sel{border-color:var(--rouge); background:#25131f; box-shadow:0 0 14px rgba(196,69,94,.2)}
-.field{margin:16px 0 4px; font-size:13px; color:var(--dim); letter-spacing:2px}
+.field{margin:16px 0 4px; font-size:calc(13px * var(--fs)); color:var(--dim); letter-spacing:2px}
 .field input{
   background:#150f1e; border:1px solid var(--line); color:var(--ink);
-  font-family:var(--serif); font-size:15px; letter-spacing:2px;
+  font-family:var(--serif); font-size:calc(15px * var(--fs)); letter-spacing:2px;
   padding:6px 12px; border-radius:4px; text-align:center; width:200px;
 }
 .field input:focus{outline:none; border-color:var(--gold)}
@@ -344,34 +345,34 @@ footer{text-align:center; color:var(--faint); font-size:11px; letter-spacing:1px
   background:linear-gradient(180deg, #3a1624, #2a101c);
   border:1px solid var(--rouge);
   color:#f0c4cd;
-  font-size:16px; letter-spacing:8px;
+  font-size:calc(16px * var(--fs)); letter-spacing:8px;
   padding:11px 32px; border-radius:6px;
 }
 .btn-main:hover{box-shadow:0 0 20px rgba(196,69,94,.4)}
-.end-prose{color:var(--dim); line-height:2; font-size:13px; margin:6px 0 18px}
+.end-prose{color:var(--dim); line-height:2; font-size:calc(13px * var(--fs)); margin:6px 0 18px}
 .end-stats{display:flex; flex-wrap:wrap; justify-content:center; gap:7px; margin-bottom:18px}
 .end-stats .chip b{color:var(--gold)}
-.disclaimer{margin-top:20px; color:var(--faint); font-size:10px; letter-spacing:1px}
+.disclaimer{margin-top:20px; color:var(--faint); font-size:calc(10px * var(--fs)); letter-spacing:1px}
 .lore-card{text-align:left; max-height:88vh; overflow-y:auto}
 .lore-cat{
-  font-size:13px; letter-spacing:4px; color:var(--gold);
+  font-size:calc(13px * var(--fs)); letter-spacing:4px; color:var(--gold);
   border-bottom:1px dashed var(--line);
   padding-bottom:4px; margin:16px 0 8px;
 }
 .lore-cat:first-child{margin-top:0}
 .lore-item{border:1px solid var(--line); border-radius:6px; background:#1a1222; padding:10px 12px; margin-bottom:8px}
-.lore-item b{display:block; font-size:14px; letter-spacing:2px; font-weight:normal; color:var(--peach); margin-bottom:5px}
-.lore-item p{margin:0; font-size:12px; line-height:2; color:var(--dim)}
+.lore-item b{display:block; font-size:calc(14px * var(--fs)); letter-spacing:2px; font-weight:normal; color:var(--peach); margin-bottom:5px}
+.lore-item p{margin:0; font-size:calc(12px * var(--fs)); line-height:2; color:var(--dim)}
 .lore-item.locked{background:#161019; border-style:dashed}
 .lore-item.locked b{color:var(--faint)}
 .lore-item.locked p{color:var(--faint)}
 .equip-card{text-align:left; max-height:88vh; overflow-y:auto}
 .equip-card .sub b{color:var(--gold)}
 .equip-row{display:flex; align-items:center; gap:10px; border:1px solid var(--line); border-radius:6px; background:#1a1222; padding:9px 12px; margin-bottom:8px}
-.equip-row .equip-slot{flex:0 0 44px; color:var(--dim); letter-spacing:2px; font-size:12px}
-.equip-row .equip-item{flex:1; min-width:0; color:var(--ink); font-size:13px; letter-spacing:1px}
-.equip-row .dim{color:var(--faint); font-size:11px; margin-left:6px}
-.equip-row button{background:transparent; border:1px solid var(--line); color:var(--gold); border-radius:5px; padding:3px 10px; font-size:12px; cursor:pointer; font-family:inherit}
+.equip-row .equip-slot{flex:0 0 44px; color:var(--dim); letter-spacing:2px; font-size:calc(12px * var(--fs))}
+.equip-row .equip-item{flex:1; min-width:0; color:var(--ink); font-size:calc(13px * var(--fs)); letter-spacing:1px}
+.equip-row .dim{color:var(--faint); font-size:calc(11px * var(--fs)); margin-left:6px}
+.equip-row button{background:transparent; border:1px solid var(--line); color:var(--gold); border-radius:5px; padding:3px 10px; font-size:calc(12px * var(--fs)); cursor:pointer; font-family:inherit}
 .equip-row button:hover{border-color:var(--gold)}
 
 ::-webkit-scrollbar{width:9px; height:9px}
@@ -391,10 +392,82 @@ footer{text-align:center; color:var(--faint); font-size:11px; letter-spacing:1px
   main{grid-template-columns:1fr}
   aside#panel{max-height:38vh}
   .origin-grid{grid-template-columns:1fr}
+  section{min-height:auto; max-height:62vh}
+  #log{min-height:140px}
 }
 @media (prefers-reduced-motion: reduce){
   *,*::before,*::after{animation:none !important; transition:none !important}
 }
+
+/* ===== 亮色主题（粉白 · 合欢宗） ===== */
+:root[data-theme="light"]{
+  --bg:#fbf4f5;
+  --bg2:#f4e6e8;
+  --panel:#fffcfc;
+  --panel2:#faecee;
+  --line:#ecd3da;
+  --ink:#5a3a44;
+  --dim:#8a6670;
+  --faint:#bd9da6;
+  --rouge:#c2455e;
+  --rouge2:#9a2f45;
+  --gold:#c08a4e;
+  --jade:#6f9a82;
+  --peach:#d97f92;
+  --moon:#7a8ba8;
+}
+[data-theme="light"] body{
+  background:
+    radial-gradient(1100px 560px at 85% -8%, rgba(196,69,94,.10), transparent 60%),
+    radial-gradient(900px 520px at 8% 108%, rgba(214,140,165,.18), transparent 60%),
+    linear-gradient(160deg, var(--bg), var(--bg2) 60%, var(--bg));
+}
+[data-theme="light"] body::before{background:repeating-linear-gradient(0deg, rgba(196,69,94,.03) 0 1px, transparent 1px 3px)}
+[data-theme="light"] header{background:linear-gradient(180deg, rgba(255,252,252,.92), rgba(250,236,238,.88))}
+[data-theme="light"] .meter{background:#f0e2e6; border-color:#e4d0d8}
+[data-theme="light"] .chip{background:#faecee}
+[data-theme="light"] .npc-card{background:linear-gradient(180deg, var(--panel2), #fff)}
+[data-theme="light"] .npc-card.sel{border-color:var(--rouge); background:#fbe4e9}
+[data-theme="light"] .npc-card.npc-common{background:linear-gradient(180deg, #f4ebee, #efe5e9); border-color:#e3d3d9}
+[data-theme="light"] .npc-card.npc-common:hover{border-color:#cdb2bc}
+[data-theme="light"] .npc-card.npc-common.sel{border-color:#cdb2bc; background:#ece0e5}
+[data-theme="light"] .npc-card.npc-common .npc-icon{border-color:#c8afb9; color:var(--faint); background:rgba(120,90,100,.08)}
+[data-theme="light"] .loc-btn{background:linear-gradient(180deg, var(--panel2), #fff)}
+[data-theme="light"] .loc-btn.cur{border-color:var(--rouge); background:#fbe4e9}
+[data-theme="light"] .loc-desc{background:rgba(196,69,94,.06); border-left-color:var(--rouge2)}
+[data-theme="light"] .log-line.danger{color:#c0392b}
+[data-theme="light"] .log-line.gain{color:#4a7a55}
+[data-theme="light"] #actions button{background:linear-gradient(180deg, var(--panel2), #fff)}
+[data-theme="light"] #actions button.choice{border-color:var(--rouge); background:linear-gradient(180deg, #fde4e9, #f8d5dc); color:#8a2f45}
+[data-theme="light"] #actions button.choice:hover:not(:disabled){border-color:#e07088; box-shadow:0 0 16px rgba(196,69,94,.28)}
+[data-theme="light"] #actions button.zhuzhu{color:#8a5a20}
+[data-theme="light"] .overlay{background:rgba(90,50,60,.5)}
+[data-theme="light"] .card{background:linear-gradient(180deg, #fffdfd, #faecee); box-shadow:0 24px 70px rgba(120,70,90,.28)}
+[data-theme="light"] .origin-card{background:#faecee}
+[data-theme="light"] .origin-card.sel{border-color:var(--rouge); background:#fbe4e9; box-shadow:0 0 14px rgba(196,69,94,.18)}
+[data-theme="light"] .field{background:#faecee; color:var(--ink)}
+[data-theme="light"] .field input{background:#fffdfd; color:var(--ink); border-color:var(--line)}
+[data-theme="light"] .btn-main{background:linear-gradient(180deg, #d9536e, #b83350)}
+[data-theme="light"] .lore-item{background:#fbeef0}
+[data-theme="light"] .lore-item.locked{background:#f4e9ec}
+[data-theme="light"] .equip-row{background:#fbeef0}
+[data-theme="light"] .equip-row button{color:var(--rouge)}
+[data-theme="light"] ::-webkit-scrollbar-thumb{background:#e0c8cf; border:2px solid #f6e9eb}
+[data-theme="light"] aside, [data-theme="light"] section{background:linear-gradient(180deg, rgba(255,252,252,.94), rgba(250,236,238,.92))}
+[data-theme="light"] #charInfo{background:rgba(255,245,247,.6)}
+[data-theme="light"] .log-line.loc{background:rgba(196,69,94,.06)}
+[data-theme="light"] #actions{background:rgba(255,240,243,.55)}
+[data-theme="light"] #log::-webkit-scrollbar-track{background:transparent}
+
+/* ===== 字号三档 ===== */
+:root[data-font="medium"]{ --fs:1.15; }
+:root[data-font="large"]{ --fs:1.3; }
+
+/* ===== 设置面板 ===== */
+.settings-row{display:flex; gap:10px; justify-content:center; margin:6px 0 16px; flex-wrap:wrap}
+.settings-row button{background:transparent; border:1px solid var(--line); color:var(--dim); border-radius:5px; padding:8px 24px; font-family:inherit; font-size:calc(14px * var(--fs)); cursor:pointer; letter-spacing:2px}
+.settings-row button.sel{border-color:var(--rouge); color:var(--rouge); background:rgba(196,69,94,.08)}
+.settings-row button:hover{border-color:var(--gold); color:var(--gold)}
 </style>
 </head>
 <body>
@@ -407,6 +480,7 @@ footer{text-align:center; color:var(--faint); font-size:11px; letter-spacing:1px
     </div>
     <div id="cal"><span>第 <b id="calYear">1</b> 年 · <b id="calMonth">1</b> 月</span><span>年方 <b id="calAge">18</b></span></div>
     <div id="seal" data-stage="凡人"><span id="sealChar">凡</span></div>
+    <button class="lore-btn" id="btnSettings" type="button">设置</button>
     <button class="lore-btn" id="btnEquip" type="button">行囊</button>
     <button class="lore-btn" id="btnLore" type="button">见闻录</button>
     <button class="reset" id="btnReset" type="button">重入轮回</button>
@@ -433,6 +507,9 @@ footer{text-align:center; color:var(--faint); font-size:11px; letter-spacing:1px
 </div>
 <div id="equipOverlay" class="overlay hidden">
   <div class="card equip-card" id="equipCard"></div>
+</div>
+<div id="settingsOverlay" class="overlay hidden">
+  <div class="card" id="settingsCard"></div>
 </div>
 
 <script>
@@ -13357,6 +13434,7 @@ function logLine(cls, html){
   d.className = 'log-line ' + cls;
   d.innerHTML = html;
   logEl.appendChild(d);
+  while (logEl.children.length > 200) logEl.removeChild(logEl.firstChild);
   logEl.scrollTop = logEl.scrollHeight;
 }
 function flushLines(L){ L.forEach(pair=>logLine(pair[0], pair[1])); }
@@ -14211,7 +14289,7 @@ function render(){
     '<div class="sec">' +
       '<div class="sec-title">闺中情谊</div>' +
       statMeter('姐妹同心', Math.round(sis), 150, 'm-sis') +
-      '<div style="font-size:11px;color:var(--faint);letter-spacing:1px;margin-top:4px">绯羽 · 惊鸿 · 温言 的情谊越深，姐妹事件越多</div>' +
+      '<div style="font-size:calc(11px * var(--fs));color:var(--faint);letter-spacing:1px;margin-top:4px">绯羽 · 惊鸿 · 温言 的情谊越深，姐妹事件越多</div>' +
     '</div>' +
     (S.buffs.length ? '<div class="sec"><div class="sec-title">加持</div>' + S.buffs.map(b=>'<span class="buff-tag">'+esc(b.name)+' · '+b.monthsLeft+' 月'+(b.power?' · 战力 +'+b.power:'')+(b.cultivate?' · 修炼 +'+Math.round(b.cultivate*100)+'%':'')+'</span>').join('') + '</div>' : '');
 
@@ -14231,8 +14309,6 @@ function render(){
         ).join('') +
         (fog.length ? '<button type="button" class="loc-btn fog" disabled><b>？？？</b><i>尚未涉足</i></button>' : '');
     }).join('') +
-    '<div class="sec-title">当前地点</div>' +
-    '<div class="loc-desc">' + here.desc + '</div>' +
     '<div class="sec-title">此地之人</div>' +
     (()=>{
       const present = Object.keys(NPCS).filter(id=>npcLoc(id)===S.loc && (NPCS[id].common || S.npc[id].met));
@@ -14581,12 +14657,50 @@ document.getElementById('btnLore').addEventListener('click', ()=>{
 document.getElementById('btnEquip').addEventListener('click', ()=>{
   renderEquip();
 });
+const THEME_KEY = 'hehuan_monv_theme';
+const FONT_KEY = 'hehuan_monv_font';
+function applyTheme(){
+  const t = localStorage.getItem(THEME_KEY) || 'dark';
+  document.documentElement.setAttribute('data-theme', t);
+}
+function applyFont(){
+  const f = localStorage.getItem(FONT_KEY) || 'small';
+  document.documentElement.setAttribute('data-font', f);
+}
+function setTheme(t){ localStorage.setItem(THEME_KEY, t); applyTheme(); }
+function setFont(f){ localStorage.setItem(FONT_KEY, f); applyFont(); }
+function renderSettings(){
+  const card = document.getElementById('settingsCard');
+  const theme = document.documentElement.getAttribute('data-theme') || 'dark';
+  const font = document.documentElement.getAttribute('data-font') || 'small';
+  let html = '<h1>设置</h1><p class="sub">主题 · 字号</p>';
+  html += '<div class="sec-title">主题</div>';
+  html += '<div class="settings-row">' +
+    '<button type="button" data-tset="dark" class="'+(theme==='dark'?'sel':'')+'">玄色</button>' +
+    '<button type="button" data-tset="light" class="'+(theme==='light'?'sel':'')+'">亮色</button>' +
+    '</div>';
+  html += '<div class="sec-title">字号</div>';
+  html += '<div class="settings-row">' +
+    '<button type="button" data-fset="small" class="'+(font==='small'?'sel':'')+'">小</button>' +
+    '<button type="button" data-fset="medium" class="'+(font==='medium'?'sel':'')+'">中</button>' +
+    '<button type="button" data-fset="large" class="'+(font==='large'?'sel':'')+'">大</button>' +
+    '</div>';
+  html += '<button class="btn-main" id="btnSettingsClose" type="button">合上</button>';
+  card.innerHTML = html;
+  document.getElementById('settingsOverlay').classList.remove('hidden');
+  card.querySelectorAll('[data-tset]').forEach(b=>b.addEventListener('click', ()=>{ setTheme(b.dataset.tset); renderSettings(); }));
+  card.querySelectorAll('[data-fset]').forEach(b=>b.addEventListener('click', ()=>{ setFont(b.dataset.fset); renderSettings(); }));
+}
+document.getElementById('btnSettings').addEventListener('click', ()=>{ renderSettings(); });
 document.addEventListener('click', e=>{
   if (e.target && e.target.id==='btnRestart2') resetAll();
   if (e.target && e.target.id==='btnLoreClose') document.getElementById('loreOverlay').classList.add('hidden');
   if (e.target && e.target.id==='btnEquipClose') document.getElementById('equipOverlay').classList.add('hidden');
+  if (e.target && e.target.id==='btnSettingsClose') document.getElementById('settingsOverlay').classList.add('hidden');
 });
 
+applyTheme();
+applyFont();
 showIntro();
 </script>
 </body>
